@@ -14,14 +14,10 @@ public class EjemploSimple {
         final DecoderService decoderService = DecoderService.getInstance();
 
         for (String rawDocument : ExampleDocuments.RAW_DOCUMENTS) {
-            try {
-                switch (decoderService.decode(rawDocument)) {
-                    case ResultSimple resultSimple -> System.out.println("OK -> " + resultSimple);
-                    case ResultExtraInfo resultExtraInfo -> System.out.println("OK -> " + resultExtraInfo);
-                    case ResultInvalid resultInvalid -> System.out.println("OK(INVALID) -> " + resultInvalid);
-                }
-            } catch (DecoderException e) {
-                System.out.println("Error -> " + e.getMessage());
+            switch (decoderService.decode(rawDocument)) {
+                case ResultSimple resultSimple -> System.out.println("OK -> " + resultSimple);
+                case ResultExtraInfo resultExtraInfo -> System.out.println("OK -> " + resultExtraInfo);
+                case ResultInvalid resultInvalid -> System.out.println("OK(INVALID) -> " + resultInvalid);
             }
         }
 

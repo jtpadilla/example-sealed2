@@ -31,7 +31,7 @@ public class DecoderService {
         this.docoders = docoders;
     }
 
-    public Result decode(String rawDocument) throws DecoderException {
+    public Result decode(String rawDocument) {
         for (DecoderInstance instance : docoders) {
             final Optional<Result> document = instance.parse(rawDocument);
             if (document.isPresent()) {

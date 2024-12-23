@@ -15,7 +15,7 @@ public class DecoderFrom3Parameters {
         appender.append(DecoderFrom3Parameters::decodeForThreeParameters);
     }
 
-    static public Optional<Result> decodeForThreeParameters(String rawDocument) throws DecoderException {
+    static public Optional<Result> decodeForThreeParameters(String rawDocument) {
         final DecoderData decoderData = Decoder.decode(rawDocument);
         if (decoderData.parameters().size() == 3) {
             return Optional.of(new ResultExtraInfo(decoderData.type(), decoderData.parameters()));

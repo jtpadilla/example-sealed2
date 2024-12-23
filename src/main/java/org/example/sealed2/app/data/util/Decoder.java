@@ -8,14 +8,11 @@ import java.util.List;
 
 public class Decoder {
 
-    static public DecoderData decode(String rawDocument) throws DecoderException {
+    static public DecoderData decode(String rawDocument) {
         final String document = rawDocument.trim();
         final String[] split = document.split(",");
         // La Lista retornada por 'Arrays.asList(split)' no implementa 'removeFirst()' porque es inmutable
         final List<String> list = new ArrayList<>(Arrays.asList(split));
-        if (list.size() > 200) {
-            throw new DecoderException("Demasiados parametros");
-        }
         return new DecoderData(list.removeFirst(), list);
     }
 

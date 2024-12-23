@@ -16,12 +16,8 @@ public class EjemploServlet {
         final EjemploServlet ejemploServlet = new EjemploServlet();
 
         for (String rawDocument : ExampleDocuments.RAW_DOCUMENTS) {
-            try {
-                final ServletResponse response = ejemploServlet.mapDocumentoToResonse(rawDocument);
-                System.out.println("OK -> " + response);
-            } catch (DecoderException e) {
-                System.out.println("Error -> " + e.getMessage());
-            }
+            final ServletResponse response = ejemploServlet.mapDocumentoToResonse(rawDocument);
+            System.out.println("OK -> " + response);
         }
 
 
@@ -36,7 +32,7 @@ public class EjemploServlet {
     public EjemploServlet() {
     }
 
-    public ServletResponse mapDocumentoToResonse(String rawDocument) throws DecoderException {
+    public ServletResponse mapDocumentoToResonse(String rawDocument) {
         return switch (decoderService.decode(rawDocument)) {
             case ResultSimple resultSimple -> new ServletResponse(resultSimple.getDocumenttId(), List.of());
             case ResultExtraInfo resultExtraInfo -> new ServletResponse(resultExtraInfo.getDocumenttId(), resultExtraInfo.getExtraParameters());

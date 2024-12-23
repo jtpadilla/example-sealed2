@@ -16,7 +16,7 @@ public class DecoderFrom1to2Parameters {
         appender.append(DecoderFrom1to2Parameters::decodeForTwoParameters);
     }
 
-    static public Optional<Result> decodeForOneParameter(String rawDocument) throws DecoderException {
+    static public Optional<Result> decodeForOneParameter(String rawDocument) {
         final DecoderData decoderData = Decoder.decode(rawDocument);
         if (decoderData.parameters().size() == 1) {
             return Optional.of(new ResultExtraInfo(decoderData.type(), decoderData.parameters()));
@@ -25,7 +25,7 @@ public class DecoderFrom1to2Parameters {
         }
     }
 
-    static public Optional<Result> decodeForTwoParameters(String rawDocument) throws DecoderException {
+    static public Optional<Result> decodeForTwoParameters(String rawDocument) {
         final DecoderData decoderData = Decoder.decode(rawDocument);
         if (decoderData.parameters().size() == 2) {
             return Optional.of(new ResultExtraInfo(decoderData.type(), decoderData.parameters()));
