@@ -1,7 +1,5 @@
 package org.example.sealed2.app.data.util;
 
-import org.example.sealed2.service.DecoderException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

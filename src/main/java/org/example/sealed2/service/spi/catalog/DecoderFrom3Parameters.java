@@ -1,10 +1,9 @@
 package org.example.sealed2.service.spi.catalog;
 
-import org.example.sealed2.service.DecoderException;
-import org.example.sealed2.service.Result;
-import org.example.sealed2.service.ResultExtraInfo;
 import org.example.sealed2.app.data.util.Decoder;
 import org.example.sealed2.app.data.util.DecoderData;
+import org.example.sealed2.service.Result;
+import org.example.sealed2.service.ResultExtraInfo;
 import org.example.sealed2.service.spi.DecoderAppender;
 
 import java.util.Optional;

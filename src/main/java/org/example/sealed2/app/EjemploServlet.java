@@ -1,7 +1,10 @@
 package org.example.sealed2.app;
 
 import org.example.sealed2.app.data.ExampleDocuments;
-import org.example.sealed2.service.*;
+import org.example.sealed2.service.DecoderService;
+import org.example.sealed2.service.ResultExtraInfo;
+import org.example.sealed2.service.ResultInvalid;
+import org.example.sealed2.service.ResultSimple;
 
 import java.util.List;
 
