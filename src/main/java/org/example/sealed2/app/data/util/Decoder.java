@@ -1,4 +1,4 @@
-package org.example.sealed2.service.impl.util;
+package org.example.sealed2.app.data.util;
 
 import org.example.sealed2.service.DecoderException;
 

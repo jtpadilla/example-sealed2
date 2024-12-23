@@ -15,7 +15,6 @@ public class EjemploSimple {
 
         for (String rawDocument : ExampleDocuments.RAW_DOCUMENTS) {
             try {
-                final Result documentTypeInfo = decoderService.decode(rawDocument);
                 switch (decoderService.decode(rawDocument)) {
                     case ResultSimple resultSimple -> System.out.println("OK -> " + resultSimple);
                     case ResultExtraInfo resultExtraInfo -> System.out.println("OK -> " + resultExtraInfo);

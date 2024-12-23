@@ -1,7 +1,10 @@
 package org.example.sealed2.service;
 
+import org.example.sealed2.service.spi.catalog.DecoderFrom1to2Parameters;
+import org.example.sealed2.service.spi.catalog.DecoderFrom3Parameters;
+import org.example.sealed2.service.spi.catalog.DecoderWithoutParameters;
+import org.example.sealed2.service.spi.DecoderAppender;
 import org.example.sealed2.service.spi.DecoderInstance;
-import org.example.sealed2.service.spi.DecoderProvider;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +18,11 @@ public class DecoderService {
     static private DecoderService INSTANCE;
 
     static {
-        INSTANCE = new DecoderService(DecoderProvider.appender.getInstances());
+        final DecoderAppender appender = new DecoderAppender();
+        DecoderFrom1to2Parameters.install(appender);
+        DecoderFrom3Parameters.install(appender);
+        DecoderWithoutParameters.install(appender);
+        INSTANCE = new DecoderService(appender.getInstances());
     }
 
     private List<DecoderInstance> docoders;

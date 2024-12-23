@@ -13,7 +13,7 @@ public class EjemploServlet {
 
     public void run() {
 
-        EjemploServlet ejemploServlet = new EjemploServlet();
+        final EjemploServlet ejemploServlet = new EjemploServlet();
 
         for (String rawDocument : ExampleDocuments.RAW_DOCUMENTS) {
             try {
